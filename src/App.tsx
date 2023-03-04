@@ -6,6 +6,7 @@ interface IApp {
 }
 
 export default function App({ url = '/' }: IApp) {
+  // Diff
   return (
     <StrictMode>
       <html lang="ko">
