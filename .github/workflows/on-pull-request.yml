@@ -28,6 +28,9 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
 
+      - name: Link Checking
+        run: npm run lint
+
       - name: Type Checking
         run: npm run tsc
 
