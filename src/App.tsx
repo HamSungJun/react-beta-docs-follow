@@ -1,11 +1,39 @@
-export default function App() {
-  // Intended Diff
+import { StrictMode } from 'react';
+import Router from './Router';
+
+interface IApp {
+  url?: string;
+}
+
+export default function App({ url = '/' }: IApp) {
   return (
-    <div>
-      <h1 className="text-red-500">Hello</h1>
-      <h1>Hello</h1>
-      <h1>Hello</h1>
-      <h1>Hello</h1>
-    </div>
+    <StrictMode>
+      <html lang="ko">
+        <head>
+          <script
+            type="module"
+            dangerouslySetInnerHTML={{
+              __html: `
+            import { injectIntoGlobalHook } from "/@react-refresh";
+            injectIntoGlobalHook(window);
+            window.$RefreshReg$ = () => {};
+            window.$RefreshSig$ = () => (type) => type;
+          `,
+            }}
+          ></script>
+          <meta charSet="utf-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <title>Vite + React + TS</title>
+          <link rel="stylesheet" href="/src/styles/index.css" />
+          <script type="module" src="/src/entry.client.tsx"></script>
+        </head>
+        <body>
+          <Router url={url} />
+        </body>
+      </html>
+    </StrictMode>
   );
 }
