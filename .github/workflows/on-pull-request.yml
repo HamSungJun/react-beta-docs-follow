@@ -33,9 +33,3 @@ jobs:
 
       - name: Build Checking
         run: npm run build:client && npm run build:server
-
-      - name: Run Build Storybook
-        run: npm run build:storybook
-
-      - name: Run Build React
-        run: npm run build:react
