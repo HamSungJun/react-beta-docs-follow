@@ -1,0 +1,41 @@
+name: CI ON PULL REQUEST
+
+on:
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Cache dependencies
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Type Checking
+        run: npm run tsc
+
+      - name: Build Checking
+        run: npm run build:client && npm run build:server
+
+      - name: Run Build Storybook
+        run: npm run build:storybook
+
+      - name: Run Build React
+        run: npm run build:react

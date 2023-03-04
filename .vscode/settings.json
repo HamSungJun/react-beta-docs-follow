@@ -1,0 +1,13 @@
+{
+    "eslint.enable": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "editor.quickSuggestions": {
+      "strings": true
+    }
+  }
+  
