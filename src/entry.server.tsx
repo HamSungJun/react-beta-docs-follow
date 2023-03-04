@@ -1,11 +1,9 @@
-import ReactDOMServer from 'react-dom/server';
-import { StaticRouter } from 'react-router-dom/server';
+import {
+  RenderToPipeableStreamOptions,
+  renderToPipeableStream,
+} from 'react-dom/server';
 import App from './App';
 
-export function render(url: string) {
-  return ReactDOMServer.renderToString(
-    <StaticRouter location={url}>
-      <App />
-    </StaticRouter>,
-  );
+export function render(url: string, options?: RenderToPipeableStreamOptions) {
+  return renderToPipeableStream(<App url={url} />, options);
 }
