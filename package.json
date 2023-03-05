@@ -48,5 +48,30 @@
       "prettier --write",
       "eslint --fix"
     ]
+  },
+  "bundlewatch": {
+    "files": [
+      {
+        "path": "dist/client/*.js",
+        "maxSize": "100kB"
+      },
+      {
+        "path": "dist/client/assets/*.js",
+        "maxSize": "100kB"
+      },
+      {
+        "path": "dist/server/*.js",
+        "maxSize": "100kB"
+      },
+      {
+        "path": "dist/server/assets/*.js",
+        "maxSize": "100kB"
+      }
+    ],
+    "ci": {
+      "trackBranches": [
+        "develop"
+      ]
+    }
   }
 }
