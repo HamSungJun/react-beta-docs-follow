@@ -21,6 +21,10 @@ export default function C1() {
         decrease
       </button>
       <div>Hello World</div>
+      <div>Hello World</div>
+      <div>Hello World</div>
+      <div>Hello World</div>
+      <div>Hello World</div>
     </div>
   );
 }
