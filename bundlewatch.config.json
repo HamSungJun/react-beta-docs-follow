@@ -12,5 +12,8 @@
       "path": "dist/server/assets/*.js",
       "maxSize": "100kB"
     }
-  ]
+  ],
+  "ci": {
+    "trackBranches": ["kevin/bundle-watch"]
+  }
 }
