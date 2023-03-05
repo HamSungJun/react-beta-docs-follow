@@ -1,10 +1,16 @@
-name: CI ON PULL REQUEST
+name: BUNDLE WATCH
 
 on:
+  push:
+    branches:
+      - develop
   pull_request:
+    branches-ignore:
+      - develop
+  workflow_dispatch:
 
 jobs:
-  ci:
+  bundlewatch:
     runs-on: macos-latest
     steps:
       - name: Checkout
@@ -28,8 +34,11 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
 
-      - name: Type Checking
-        run: npm run tsc
-
-      - name: Build Checking
+      - name: Run Build
         run: npm run build
+
+      - name: Run Bundle Watch
+        run: npm run bundlewatch
+        env:
+          BUNDLEWATCH_GITHUB_TOKEN: '${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}'
+          CI_BRANCH_BASE: develop

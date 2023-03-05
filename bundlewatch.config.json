@@ -11,5 +11,6 @@
   ],
   "ci": {
     "trackBranches": ["develop", "kevin/bundle-watch"]
-  }
+  },
+  "normalizeFilenames": "^.+?(\\..+?)\\.\\w+$"
 }
