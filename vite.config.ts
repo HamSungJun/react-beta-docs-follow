@@ -31,6 +31,13 @@ const VITE_CLIENT_BUILD_CONFIG: UserConfig = {
   ],
   build: {
     outDir: 'dist/client',
+    rollupOptions: {
+      output: {
+        entryFileNames: `assets/[name].[hash].js`,
+        chunkFileNames: `assets/[name].[hash].js`,
+        assetFileNames: `assets/[name].[ext]`,
+      },
+    },
   },
 };
 
@@ -46,7 +53,14 @@ const VITE_SERVER_BUILD_CONFIG: UserConfig = {
   ],
   build: {
     rollupOptions: {
-      input: 'src/entry.server.tsx',
+      input: {
+        index: 'src/entry.server.tsx',
+      },
+      output: {
+        entryFileNames: `assets/[name].[hash].js`,
+        chunkFileNames: `assets/[name].[hash].js`,
+        assetFileNames: `assets/[name].[ext]`,
+      },
     },
     outDir: 'dist/server',
   },

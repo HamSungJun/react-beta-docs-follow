@@ -8,9 +8,10 @@
     "dev": "node server.mjs",
     "tsc": "tsc",
     "build": "vite build && vite build --ssr",
-    "build:client": "vite build",
-    "build:server": "vite build --ssr",
-    "prepare": "husky install"
+    "build:client": "vite build --outDir dist/client",
+    "build:server": "vite build --outDir dist/server --ssr src/entry.server.tsx",
+    "prepare": "husky install",
+    "bundlewatch": "bundlewatch --config bundlewatch.config.json"
   },
   "keywords": [],
   "author": "",
