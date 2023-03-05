@@ -37,5 +37,4 @@ jobs:
       - name: Comment Build Results
         uses: thollander/actions-comment-pull-request@v2
         with:
-          message: |
-            Hello world ! :wave:
+          filePath: dist/client/stats.yml
