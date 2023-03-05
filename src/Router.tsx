@@ -1,10 +1,12 @@
 import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { StaticRouter, StaticRouterProps } from 'react-router-dom/server';
+import CounterProvider from './common/contexts/counter/CounterProvider';
 
 const Home = lazy(() => import('@/pages/Home'));
 const About = lazy(() => import('@/pages/About'));
 const Contact = lazy(() => import('@/pages/Contact'));
+const Counter = lazy(() => import('@/pages/Counter'));
 
 interface IRouter {
   url?: string;
@@ -34,9 +36,12 @@ export const ClientRouter = () => (
 );
 
 const AppRoutes = () => (
-  <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/About" element={<About />} />
-    <Route path="/Contact" element={<Contact />} />
-  </Routes>
+  <CounterProvider>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/About" element={<About />} />
+      <Route path="/Contact" element={<Contact />} />
+      <Route path="/Counter" element={<Counter />} />
+    </Routes>
+  </CounterProvider>
 );
