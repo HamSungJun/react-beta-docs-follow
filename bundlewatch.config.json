@@ -4,14 +4,10 @@
       "path": "dist/client/assets/*.js"
     },
     {
-      "path": "dist/server/*.js"
-    },
-    {
       "path": "dist/server/assets/*.js"
     }
   ],
   "ci": {
-    "trackBranches": ["kevin/bundle-watch"]
-  },
-  "normalizeFilenames": "^-+?(\\..+?)\\.\\w+$"
+    "trackBranches": ["develop", "kevin/bundle-watch"]
+  }
 }
