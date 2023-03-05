@@ -37,4 +37,4 @@ jobs:
       - name: Comment Build Results
         uses: thollander/actions-comment-pull-request@v2
         with:
-          filePath: dist/client/stats.yml
+          filePath: dist/client/stats.html

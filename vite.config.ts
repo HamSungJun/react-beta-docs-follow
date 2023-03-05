@@ -23,7 +23,7 @@ const VITE_CLIENT_BUILD_CONFIG: UserConfig = {
   ...VITE_COMMON_CONFIG,
   plugins: [
     reactSwc(),
-    visualizer({ filename: 'dist/client/stats.yml', template: 'list' }),
+    visualizer({ filename: 'dist/client/stats.yml', template: 'treemap' }),
   ],
   build: {
     outDir: 'dist/client',
