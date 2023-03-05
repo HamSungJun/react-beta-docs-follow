@@ -9,7 +9,8 @@
     "tsc": "tsc",
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --outDir dist/server --ssr src/entry.server.tsx",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "bundlewatch": "bundlewatch"
   },
   "keywords": [],
   "author": "",
@@ -51,10 +52,6 @@
   },
   "bundlewatch": {
     "files": [
-      {
-        "path": "dist/client/*.js",
-        "maxSize": "100kB"
-      },
       {
         "path": "dist/client/assets/*.js",
         "maxSize": "100kB"
