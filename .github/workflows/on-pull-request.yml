@@ -33,3 +33,9 @@ jobs:
 
       - name: Build Checking
         run: npm run build:client && npm run build:server
+
+      - name: Comment Build Results
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            Hello world ! :wave:
