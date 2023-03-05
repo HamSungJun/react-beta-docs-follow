@@ -9,7 +9,8 @@
     "tsc": "tsc",
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --outDir dist/server --ssr src/entry.server.tsx",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "bundlewatch": "bundlewatch --config bundlewatch.config.json"
   },
   "keywords": [],
   "author": "",
@@ -50,26 +51,5 @@
       "prettier --write",
       "eslint --fix"
     ]
-  },
-  "bundlewatch": {
-    "files": [
-      {
-        "path": "dist/client/assets/*.js",
-        "maxSize": "100kB"
-      },
-      {
-        "path": "dist/server/*.js",
-        "maxSize": "100kB"
-      },
-      {
-        "path": "dist/server/assets/*.js",
-        "maxSize": "100kB"
-      }
-    ],
-    "ci": {
-      "trackBranches": [
-        "develop"
-      ]
-    }
   }
 }

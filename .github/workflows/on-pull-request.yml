@@ -3,11 +3,6 @@ name: CI ON PULL REQUEST
 on:
   pull_request:
 
-env:
-  BUNDLEWATCH_GITHUB_TOKEN: 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
-  CI_REPO_OWNER: HamSungJun
-  CI_REPO_NAME: react-beta-docs-follow
-
 jobs:
   ci:
     runs-on: macos-latest
@@ -38,3 +33,9 @@ jobs:
 
       - name: Build Checking
         run: npm run build
+
+      - name: Run Bundle Watch
+        run: npm run bundlewatch
+        env:
+          BUNDLEWATCH_GITHUB_TOKEN: '${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}'
+          CI_BRANCH_BASE: develop
