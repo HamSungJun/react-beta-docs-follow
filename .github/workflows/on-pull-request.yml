@@ -34,8 +34,8 @@ jobs:
       - name: Build Checking
         run: npm run build
 
-      - name: Comment Build Results
-        uses: actions/upload-artifact@v3
+      - name: Build Result Preview
+        id: html_preview
+        uses: pavi2410/html-preview-action@v2
         with:
-          name: client-build
-          path: dist/client/stats.html
+          html_file: 'dist/client/stats.html'

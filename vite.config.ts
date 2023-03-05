@@ -23,7 +23,11 @@ const VITE_CLIENT_BUILD_CONFIG: UserConfig = {
   ...VITE_COMMON_CONFIG,
   plugins: [
     reactSwc(),
-    visualizer({ filename: 'dist/client/stats.html', template: 'treemap' }),
+    visualizer({
+      filename: 'dist/client/stats.html',
+      title: 'client-build',
+      template: 'treemap',
+    }),
   ],
   build: {
     outDir: 'dist/client',
@@ -34,7 +38,11 @@ const VITE_SERVER_BUILD_CONFIG: UserConfig = {
   ...VITE_COMMON_CONFIG,
   plugins: [
     reactSwc(),
-    visualizer({ filename: 'dist/server/stats.html', template: 'treemap' }),
+    visualizer({
+      filename: 'dist/server/stats.html',
+      title: 'server-build',
+      template: 'treemap',
+    }),
   ],
   build: {
     rollupOptions: {
