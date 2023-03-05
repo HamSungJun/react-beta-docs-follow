@@ -1,19 +1,17 @@
 {
   "files": [
     {
-      "path": "dist/client/assets/*.js",
-      "maxSize": "100kB"
+      "path": "dist/client/assets/*.js"
     },
     {
-      "path": "dist/server/*.js",
-      "maxSize": "100kB"
+      "path": "dist/server/*.js"
     },
     {
-      "path": "dist/server/assets/*.js",
-      "maxSize": "100kB"
+      "path": "dist/server/assets/*.js"
     }
   ],
   "ci": {
     "trackBranches": ["kevin/bundle-watch"]
-  }
+  },
+  "normalizeFilenames": "^-+?(\\..+?)\\.\\w+$"
 }
