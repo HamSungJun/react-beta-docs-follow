@@ -1,10 +1,12 @@
 {
   "files": [
     {
-      "path": "dist/client/assets/*.js"
+      "path": "dist/client/assets/*.js",
+      "maxSize": "500kb"
     },
     {
-      "path": "dist/server/assets/*.js"
+      "path": "dist/server/assets/*.js",
+      "maxSize": "500kb"
     }
   ],
   "ci": {
