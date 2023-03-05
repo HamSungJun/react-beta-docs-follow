@@ -32,7 +32,7 @@ jobs:
         run: npm run tsc
 
       - name: Build Checking
-        run: npm run build:client && npm run build:server
+        run: npm run build
 
       - name: Comment Build Results
         uses: thollander/actions-comment-pull-request@v2
