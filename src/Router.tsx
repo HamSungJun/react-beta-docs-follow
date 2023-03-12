@@ -8,6 +8,8 @@ const About = lazy(() => import('@/pages/About'));
 const Contact = lazy(() => import('@/pages/Contact'));
 const Counter = lazy(() => import('@/pages/Counter'));
 const Effect = lazy(() => import('@/pages/Effect'));
+const ExternalStore = lazy(() => import('@/pages/ExternalStore'));
+const DefferedValue = lazy(() => import('@/pages/DeferredValue'));
 
 interface IRouter {
   url?: string;
@@ -44,6 +46,9 @@ const AppRoutes = () => (
       <Route path="/Contact" element={<Contact />} />
       <Route path="/Counter" element={<Counter />} />
       <Route path="/Effect" element={<Effect />} />
+      <Route path="/External" element={<ExternalStore />} />
+      <Route path="/Defer" element={<DefferedValue />} />
+      <Route path="/*" element={<h1>404</h1>} />
     </Routes>
   </CounterProvider>
 );
